@@ -1,0 +1,31 @@
+net: "/home/liuli/caffe-ssd/examples/car_classfication/train_test_singleFrame_RGB.prototxt"
+
+test_iter: 100    #subject to iter_size
+test_state: { stage: 'test-on-test' }
+test_interval: 500
+
+iter_size:2
+
+base_lr: 0.00005
+display: 20
+max_iter: 40000
+gamma: 0.1
+momentum: 0.9
+weight_decay: 0.0005 
+lr_policy: "multistep"
+stepvalue: 4000
+stepvalue: 8000
+type: "Adam"
+ 
+snapshot: 1000
+snapshot_prefix: "/home/liuli/caffe-ssd/models/car_classification/Mobilenetv2/car_classification_Mobilenetv2_no_fc"
+solver_mode: GPU
+random_seed: 1701
+test_initialization: false
+average_loss:40
+show_per_class_result: true
+
+snapshot_after_train: true
+
+
+debug_info:false
